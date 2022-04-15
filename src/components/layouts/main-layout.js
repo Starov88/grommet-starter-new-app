@@ -7,11 +7,15 @@ import {
     Grommet,
     Layer,
     ResponsiveContext,
+    Sidebar,
+    SidebarHeader,
+    SidebarFooter
 } from 'grommet';
 import { FormClose, BladesVertical } from 'grommet-icons';
 
 import Test from '../test/test';
 import AppBar from './app-bar';
+import AppSidebar from './app-sidebar';
 
 const MainLayout = ({ theme, children }) => {
 
@@ -23,27 +27,15 @@ const MainLayout = ({ theme, children }) => {
                 {size => (
                     <Box fill>
 
-                        <AppBar>
-                            <Button
-                                icon={<BladesVertical />}
-                                onClick={() => setShowSidebar((sb) => !sb)}
-                            />
-                            <Heading level='3' margin='none'>Sweets & Flowers</Heading>
-                        </AppBar>
+                        <AppBar onSidebarBtnClick={setShowSidebar} />
+
 
                         <Box direction='row' flex overflow={{ horizontal: 'hidden' }}>
 
                             {(!showSidebar || size !== 'small') ? (
                                 <Collapsible direction="horizontal" open={showSidebar}>
-                                    <Box
-                                        flex
-                                        width='medium'
-                                        background='light-2'
-                                        elevation='small'
-                                        align='center'
-                                        justify='center'
-                                    >
-                                        sidebar
+                                    <Box direction="row" height={{ min: '100%' }}>
+                                        <AppSidebar />
                                     </Box>
                                 </Collapsible>
                             ) : (
@@ -72,8 +64,10 @@ const MainLayout = ({ theme, children }) => {
                                 </Layer>
                             )}
 
-                            <Box flex align='center' justify='center'>
-                                {children}
+                            <Box flex pad="large" justify='center'>
+                                {React.Children.map(children, (child) => {
+                                    return React.cloneElement(child, { showSidebar });
+                                })}
                             </Box>
                         </Box>
                     </Box>

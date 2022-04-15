@@ -1,18 +1,25 @@
 import React from "react";
-import { Box } from 'grommet';
+import { Button, Header, Heading } from 'grommet';
+import { FormClose, BladesVertical } from 'grommet-icons';
 
 const AppBar = (props) => (
-    <Box
-        tag='header'
+    <Header
         direction='row'
         align='center'
-        justify='between'
+        justify='start'
         background='brand'
-        pad={{ left: 'medium', right: 'small', vertical: 'small' }}
+        gap='medium'
+        // pad={{ left: 'medium', right: 'small', vertical: 'small' }}
+        pad='small'
         elevation='medium'
         style={{ zIndex: '1' }}
-        {...props}
-    />
+    >
+        <Button
+            icon={<BladesVertical />}
+            onClick={() => props.onSidebarBtnClick((sb) => !sb)}
+        />
+        <Heading level='3' margin='none'>Sweets & Flowers</Heading>
+    </Header>
 );
 
 export default AppBar;
