@@ -1,10 +1,11 @@
-import React, { useMemo } from 'react';
+import React, { useState } from 'react';
 
-import { useRequest, useGetAllData } from '../hoc';
+import { useGetAllData } from '../hoc';
 import ProductGrid from '../components/product-grid';
 import MainLayout from '../components/layouts/main-layout';
 import { cakeService } from '../services';
 import ProductItem from '../components/product-item';
+import { Button } from 'grommet';
 
 const ProductsPage = ({ theme }) => {
 
@@ -14,7 +15,12 @@ const ProductsPage = ({ theme }) => {
     //     error: null
     // }), []);
 
-    const { data, loading, error } = useGetAllData(cakeService, { name: 'наполеон10' });
+    const [filter, setFilter] = useState(null);
+
+    const { data, loading, error } = useGetAllData(cakeService, filter);
+
+
+    console.log(filter);
 
     if (loading && !error) {
         return (
@@ -33,6 +39,7 @@ const ProductsPage = ({ theme }) => {
 
         return (
             <MainLayout theme={theme}>
+                {/* <Button onClick={() => setFilter({ name: 'наполеон11' })}>Click</Button> */}
                 <ProductGrid>{items}</ProductGrid>
             </MainLayout>
         );

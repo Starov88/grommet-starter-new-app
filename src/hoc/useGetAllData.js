@@ -1,9 +1,8 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback } from 'react';
 import useRequest from './useRequest';
 
 const useGetAllData = (cakeService, filter) => {
-    const memoFilter = useMemo(() => (filter), []);
-    const request = useCallback(() => cakeService.getAll(memoFilter), [cakeService, memoFilter]);
+    const request = useCallback(() => cakeService.getAll(filter), [cakeService, filter]);
     return useRequest(request);
 }
 
