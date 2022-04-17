@@ -15,27 +15,30 @@ const AppSidefilter = ({ onFilterConfirm }) => {
 
     const { data, loading, error } = useGetAllData(filterService);
 
-
     useEffect(() => {
         console.log("useEffect - sidefilter")
         setOptions(data);
     }, [data]);
 
-
     const onConfirm = () => {
-        var result = [];
-        options.forEach(item => item.options.forEach((opt) => {
-            if (opt.checked) {
-                result.push(opt.value);
-            }
-        }));
+        if (onFilterConfirm) {
+            var result = {};
+            options.forEach(item => item.options.forEach((opt) => {
+                if (opt.checked) {
+                    if (result[item.id]) {
+                        result[item.id].push(opt.value);
+                    }
+                    else {
+                        result[item.id] = [opt.value];
+                    }
+                }
+            }));
 
-        if (onFilterConfirm)
             onFilterConfirm(result);
+        }
     }
 
     const onOptionSelected = ({ value, option }) => {
-        console.log(option);
         var newData = [...options];
         var indxOpt = -1;
         var indx = newData.findIndex((item) => {

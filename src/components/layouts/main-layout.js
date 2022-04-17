@@ -17,6 +17,8 @@ import Test from '../test/test';
 import AppBar from './app-bar';
 import AppSidebar from './app-sidebar';
 
+import './layout.css';
+
 const MainLayout = ({ theme, sidebar, children }) => {
 
     var [showSidebar, setShowSidebar] = useState(true);
@@ -34,7 +36,7 @@ const MainLayout = ({ theme, sidebar, children }) => {
 
                             {(!showSidebar || size !== 'small') ? (
                                 <Collapsible direction="horizontal" open={showSidebar}>
-                                    <Box direction="row" height={{ min: '100%' }}>
+                                    <Box className='app-sidebar' direction="row" height={{ min: '100%' }}>
                                         <AppSidebar>
                                             {sidebar}
                                         </AppSidebar>
@@ -66,7 +68,7 @@ const MainLayout = ({ theme, sidebar, children }) => {
                                 </Layer>
                             )}
 
-                            <Box flex pad="large" justify='center'>
+                            <Box flex className='app-content' pad="large">
                                 {React.Children.map(children, (child) => {
                                     return React.cloneElement(child, { showSidebar });
                                 })}

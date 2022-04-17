@@ -1,0 +1,11 @@
+#root .app-sidebar {
+    min-width: 250px;
+}
+
+#root .app-sidebar > div {
+    min-width: 100%;
+}
+
+#root .app-sidebar > div > div {
+    min-width: 100%;
+}

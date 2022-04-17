@@ -19,8 +19,7 @@ const ProductsPage = ({ theme }) => {
     const [filter, setFilter] = useState(null);
 
     return (
-        <MainLayout theme={theme} sidebar={<AppSidefilter onFilterConfirm={(data) => console.log(data)} />}>
-            {/* <Button flex label="click" onClick={() => setFilter({ name: "наполеон1" })} /> */}
+        <MainLayout theme={theme} sidebar={<AppSidefilter onFilterConfirm={(data) => { console.log(data); setFilter(data) }} />}>
             <ProductGrid filter={filter} />
         </MainLayout>
     )

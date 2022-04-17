@@ -9,8 +9,7 @@
         "diameter": 16,
         "composition": [
             "choko",
-            "milk",
-            "nuts"
+            "milk"
         ]
     },
     {
@@ -22,8 +21,7 @@
         "weight": 1560,
         "diameter": 20,
         "composition": [
-            "choko",
-            "nuts"
+            "choko"
         ]
     },
     {
@@ -35,8 +33,7 @@
         "weight": 1560,
         "diameter": 24,
         "composition": [
-            "milk",
-            "nuts"
+            "milk"
         ]
     },
     {
@@ -69,7 +66,7 @@
         "name": "наполеон6",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "bisquit",
+        "type": "muss",
         "weight": 1560,
         "diameter": 24,
         "composition": [
@@ -98,8 +95,7 @@
         "weight": 1560,
         "diameter": 24,
         "composition": [
-            "choko",
-            "nuts"
+            "choko"
         ]
     },
     {
@@ -112,7 +108,7 @@
         "diameter": 20,
         "composition": [
             "milk",
-            "nuts"
+            "choko"
         ]
     },
     {
@@ -175,7 +171,7 @@
         "diameter": 20,
         "composition": [
             "choko",
-            "nuts"
+            "milk"
         ]
     },
     {
@@ -187,9 +183,7 @@
         "weight": 1560,
         "diameter": 24,
         "composition": [
-            "choko",
-            "milk",
-            "nuts"
+            "choko"
         ]
     }
 ]

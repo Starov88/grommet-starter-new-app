@@ -58,8 +58,8 @@ export const AppSidebar = (props) => (
         <Sidebar
             responsive
             background="light-2"
-            header={<SidebarHeader />}
-            footer={<SidebarFooter />}
+            header={null} //{<SidebarHeader />}
+            footer={null} //{<SidebarFooter />}
             pad={{ left: 'medium', right: 'large', vertical: 'medium' }}
         >
             {props.children}

@@ -37,7 +37,7 @@ const ProductItem = ({ product }) => {
                         <Heading level="3" margin="none">
                             {product.title}
                         </Heading>
-                        <Text size="small">{product.name}</Text>
+                        <Text size="small">{`${product.name} (${product.diameter} : ${product.type} : ${product.composition})`}</Text>
                     </Box>
                 </CardHeader>
             </Stack>
