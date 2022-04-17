@@ -4,7 +4,7 @@ export default class HttpSender {
 
     _regExForId = /\/([0-9]*)\/$/;
 
-    _baseApiUrl = './test-data.json';
+    _baseApiUrl = '';
 
     _options = {
         headers: {

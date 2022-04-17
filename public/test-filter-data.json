@@ -1,0 +1,74 @@
+[
+    {
+        "id": "type",
+        "name": "Тип",
+        "options": [
+            {
+                "label": "Бисквит",
+                "value": "bisquit",
+                "count": 3,
+                "checked": false
+            },
+            {
+                "label": "Мусс",
+                "value": "muss",
+                "count": 3,
+                "checked": false
+            },
+            {
+                "label": "Сыр",
+                "value": "cheese",
+                "count": 3,
+                "checked": false
+            }
+        ]
+    },
+    {
+        "id": "composition",
+        "name": "Состав",
+        "options": [
+            {
+                "label": "Шоколад",
+                "value": "choko",
+                "count": 3,
+                "checked": false
+            },
+            {
+                "label": "Молоко",
+                "value": "milk",
+                "count": 3,
+                "checked": false
+            },
+            {
+                "label": "Орехи",
+                "value": "nuts",
+                "count": 3,
+                "checked": false
+            }
+        ]
+    },
+    {
+        "id": "diameter",
+        "name": "Диаметр",
+        "options": [
+            {
+                "label": "16см",
+                "value": 16,
+                "count": 3,
+                "checked": false
+            },
+            {
+                "label": "20см",
+                "value": 20,
+                "count": 3,
+                "checked": false
+            },
+            {
+                "label": "24см",
+                "value": 24,
+                "count": 3,
+                "checked": false
+            }
+        ]
+    }
+]

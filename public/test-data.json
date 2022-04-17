@@ -4,134 +4,192 @@
         "name": "наполеон1",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "бисквит",
+        "type": "muss",
         "weight": 1560,
-        "diameter": 24
+        "diameter": 16,
+        "composition": [
+            "choko",
+            "milk",
+            "nuts"
+        ]
     },
     {
         "id": 2,
         "name": "наполеон2",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "бисквит",
+        "type": "muss",
         "weight": 1560,
-        "diameter": 24
+        "diameter": 20,
+        "composition": [
+            "choko",
+            "nuts"
+        ]
     },
     {
         "id": 3,
         "name": "наполеон3",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "бисквит",
+        "type": "cheese",
         "weight": 1560,
-        "diameter": 24
+        "diameter": 24,
+        "composition": [
+            "milk",
+            "nuts"
+        ]
     },
     {
         "id": 4,
         "name": "наполеон4",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "бисквит",
+        "type": "cheese",
         "weight": 1560,
-        "diameter": 24
+        "diameter": 16,
+        "composition": [
+            "choko"
+        ]
     },
     {
         "id": 5,
         "name": "наполеон5",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "бисквит",
+        "type": "muss",
         "weight": 1560,
-        "diameter": 24
+        "diameter": 20,
+        "composition": [
+            "choko",
+            "milk"
+        ]
     },
     {
         "id": 6,
         "name": "наполеон6",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "бисквит",
+        "type": "bisquit",
         "weight": 1560,
-        "diameter": 24
+        "diameter": 24,
+        "composition": [
+            "choko",
+            "nuts"
+        ]
     },
     {
         "id": 7,
         "name": "наполеон7",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "бисквит",
+        "type": "cheese",
         "weight": 1560,
-        "diameter": 24
+        "diameter": 24,
+        "composition": [
+            "nuts"
+        ]
     },
     {
         "id": 8,
         "name": "наполеон8",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "бисквит",
+        "type": "cheese",
         "weight": 1560,
-        "diameter": 24
+        "diameter": 24,
+        "composition": [
+            "choko",
+            "nuts"
+        ]
     },
     {
         "id": 9,
         "name": "наполеон9",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "бисквит",
+        "type": "muss",
         "weight": 1560,
-        "diameter": 24
+        "diameter": 20,
+        "composition": [
+            "milk",
+            "nuts"
+        ]
     },
     {
         "id": 10,
         "name": "наполеон10",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "бисквит",
+        "type": "muss",
         "weight": 1560,
-        "diameter": 24
+        "diameter": 16,
+        "composition": [
+            "milk"
+        ]
     },
     {
         "id": 11,
         "name": "наполеон11",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "бисквит",
+        "type": "bisquit",
         "weight": 1560,
-        "diameter": 24
+        "diameter": 20,
+        "composition": [
+            "choko",
+            "milk",
+            "nuts"
+        ]
     },
     {
         "id": 12,
         "name": "наполеон12",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "бисквит",
+        "type": "bisquit",
         "weight": 1560,
-        "diameter": 24
+        "diameter": 24,
+        "composition": [
+            "choko"
+        ]
     },
     {
         "id": 13,
         "name": "наполеон13",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "бисквит",
+        "type": "cheese",
         "weight": 1560,
-        "diameter": 24
+        "diameter": 16,
+        "composition": [
+            "nuts"
+        ]
     },
     {
         "id": 14,
         "name": "наполеон14",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "бисквит",
+        "type": "cheese",
         "weight": 1560,
-        "diameter": 24
+        "diameter": 20,
+        "composition": [
+            "choko",
+            "nuts"
+        ]
     },
     {
         "id": 15,
         "name": "наполеон15",
         "title": "торт",
         "description": "очень вкусный торт",
-        "type": "бисквит",
+        "type": "bisquit",
         "weight": 1560,
-        "diameter": 24
+        "diameter": 24,
+        "composition": [
+            "choko",
+            "milk",
+            "nuts"
+        ]
     }
 ]

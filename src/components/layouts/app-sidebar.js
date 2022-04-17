@@ -53,7 +53,7 @@ const MainNavigation = () => (
     </Nav>
 );
 
-export const AppSidebar = () => (
+export const AppSidebar = (props) => (
     <Box direction="row" height={{ min: '100%' }}>
         <Sidebar
             responsive
@@ -62,7 +62,9 @@ export const AppSidebar = () => (
             footer={<SidebarFooter />}
             pad={{ left: 'medium', right: 'large', vertical: 'medium' }}
         >
-            <MainNavigation />
+            {props.children}
+            {/* <MainNavigation /> */}
+
         </Sidebar>
     </Box>
 );

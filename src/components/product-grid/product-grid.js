@@ -1,16 +1,34 @@
 import React from "react";
-
 import { Grid } from 'grommet';
+
+import { useGetAllData } from '../../hoc';
+import { cakeService } from '../../services';
 
 import ProductItem from "../product-item";
 
 import './product-grid.css';
 
-const ProductGrid = (props) => {
+const ProductGrid = ({ filter }) => {
 
-    var num = 1;
+    const { data, loading, error } = useGetAllData(cakeService, filter);
 
-    var data = ["", "", "", "", "", "", ""];
+    if (loading && !error) {
+        return (
+            <p>loading</p>
+        );
+    }
+
+    if (error) {
+        return (
+            <p>{error}</p>
+        );
+    }
+
+    const items = data.map((item) => {
+        return (
+            <ProductItem key={item.id} product={item} />
+        );
+    });
 
     return (
         <Grid flex fill
@@ -20,7 +38,7 @@ const ProductGrid = (props) => {
             justifyContent="center"
             columns={{ count: 'fill', size: ['small', 'medium'] }}
         >
-            {props.children}
+            {items}
         </Grid>
     );
 }

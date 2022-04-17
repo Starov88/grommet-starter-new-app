@@ -1,10 +1,10 @@
 import HttpSender from "./http-sender";
 
-export class CakeService extends HttpSender {
+export default class CakeService extends HttpSender {
 
     constructor() {
         super();
-        this.apiRoute = '';
+        this.apiRoute = './test-data.json';
     }
 
     async get(id) {
@@ -25,6 +25,7 @@ export class CakeService extends HttpSender {
 
     _filterData(data, filterObj) {
         if (!data) return [];
+
         return data.filter((item) => {
             if (item.name === filterObj.name) return true;
             return false;

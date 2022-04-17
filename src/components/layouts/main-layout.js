@@ -17,9 +17,9 @@ import Test from '../test/test';
 import AppBar from './app-bar';
 import AppSidebar from './app-sidebar';
 
-const MainLayout = ({ theme, children }) => {
+const MainLayout = ({ theme, sidebar, children }) => {
 
-    var [showSidebar, setShowSidebar] = useState(false);
+    var [showSidebar, setShowSidebar] = useState(true);
 
     return (
         <Grommet theme={theme} full>
@@ -35,7 +35,9 @@ const MainLayout = ({ theme, children }) => {
                             {(!showSidebar || size !== 'small') ? (
                                 <Collapsible direction="horizontal" open={showSidebar}>
                                     <Box direction="row" height={{ min: '100%' }}>
-                                        <AppSidebar />
+                                        <AppSidebar>
+                                            {sidebar}
+                                        </AppSidebar>
                                     </Box>
                                 </Collapsible>
                             ) : (
@@ -46,7 +48,7 @@ const MainLayout = ({ theme, children }) => {
                                         align='center'
                                         justify='center'
                                     >
-                                        sidebar
+                                        {sidebar}
                                     </Box>
                                     <Box
                                         background='light-2'
