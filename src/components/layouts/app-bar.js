@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Header, Heading } from 'grommet';
-import { FormClose, BladesVertical } from 'grommet-icons';
+import { BladesVertical } from 'grommet-icons';
 
 const AppBar = (props) => (
     <Header
