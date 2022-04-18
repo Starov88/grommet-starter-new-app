@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sidebar, Avatar, Button, Box, Nav, Stack, Text } from 'grommet';
+import { Collapsible, Sidebar, Avatar, Button, Box, Nav, Stack, Text } from 'grommet';
 import {
     Analytics,
     Chat,
@@ -53,20 +53,22 @@ const MainNavigation = () => (
     </Nav>
 );
 
-export const AppSidebar = (props) => (
-    <Box direction="row" height={{ min: '100%' }}>
-        <Sidebar
-            responsive
-            background="light-2"
-            header={null} //{<SidebarHeader />}
-            footer={null} //{<SidebarFooter />}
-            pad={{ left: 'medium', right: 'large', vertical: 'medium' }}
-        >
-            {props.children}
-            {/* <MainNavigation /> */}
+const AppSidebar = ({ showSidebar, children }) => (
+    <Collapsible direction="horizontal" open={showSidebar}>
+        <Box direction="row" height={{ min: '100%' }}>
+            <Sidebar
+                responsive
+                background="light-2"
+                header={null} //{<SidebarHeader />}
+                footer={null} //{<SidebarFooter />}
+                pad={{ left: 'medium', right: 'large', vertical: 'medium' }}
+            >
+                {children}
+                {/* <MainNavigation /> */}
+            </Sidebar>
+        </Box>
+    </Collapsible>
 
-        </Sidebar>
-    </Box>
 );
 
 

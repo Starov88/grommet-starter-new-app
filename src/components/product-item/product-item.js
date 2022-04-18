@@ -10,8 +10,8 @@ const ProductItem = ({ product }) => {
         <Card
             flex
             hoverIndicator
-            onClick={(evt) => console.log(evt)}
-            className="product-item"
+            onClick={(evt) => console.log(evt.currentTarget)}
+            className="app-product-item"
             width="medium"
             justify="center"
         >
@@ -29,15 +29,18 @@ const ProductItem = ({ product }) => {
                     pad={{ horizontal: 'small', vertical: 'small' }}
                     // https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4#all-hex-value-from-100-to-0-alpha
                     background={{ color: 'brand2', opacity: 0.5 }}
-
+                    className="app-product-item-header"
                     width="medium"
                     justify="start"
                 >
-                    <Box>
-                        <Heading level="3" margin="none">
+                    <Box alignSelf="start">
+                        <Heading level="3" alignSelf="start" margin={{ top: "xsmall", bottom: "medium" }}>
                             {product.title}
                         </Heading>
-                        <Text size="small">{`${product.name} (${product.diameter} : ${product.type} : ${product.composition})`}</Text>
+                        <Text weight="bold" size="medium">{`Название: ${product.name}`}</Text>
+                        <Text size="medium">{`Тип: ${product.type}`}</Text>
+                        <Text size="medium">{`Cостав: ${product.composition}`}</Text>
+                        <Text size="medium">{`Диаметр: ${product.diameter}`}</Text>
                     </Box>
                 </CardHeader>
             </Stack>

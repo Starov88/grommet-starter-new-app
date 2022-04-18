@@ -1,9 +1,6 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import MainLayout from './components/layouts/main-layout';
-import Test from './components/test/test';
-
-import ProductGrid from './components/product-grid';
 import ProductsPage from './pages/products-page';
 
 const theme = {
@@ -26,14 +23,20 @@ const theme = {
   },
 };
 
+const routes = (
+  <Routes>
+    <Route path='/' element={<ProductsPage theme={theme} />} />
+    <Route path='profile/' element={<div>profile</div>} />
+    <Route path='cart/' element={<div>cart</div>} />
+  </Routes>
+);
+
 const App = () => {
   return (
-    // <MainLayout theme={theme}>
-    //   {/* <Test /> */}
-    //   <ProductGrid />
-    // </MainLayout>
-    <ProductsPage theme={theme} />
-  );
+    <Router>
+      {routes}
+    </Router>
+  )
 }
 
 export default App;

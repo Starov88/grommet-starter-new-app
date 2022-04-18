@@ -1,3 +1,18 @@
-#root div.product-item {
+#root div.app-product-item {
     box-shadow: 0px 4px 8px rgb(0 0 0 / 20%);
 }
+
+#root div.app-product-item > div > div:last-child {
+    height: 19%;
+    -webkit-transition: height 2s;
+    transition: height 1s;
+}
+
+#root div.app-product-item > div > div:last-child:hover {
+    height: 100%;
+}
+
+#root div.app-product-item .app-product-item-header {
+    height: 100%;
+}
+

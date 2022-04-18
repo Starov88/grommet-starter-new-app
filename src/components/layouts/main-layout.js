@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Box,
     Button,
@@ -28,50 +28,48 @@ const MainLayout = ({ theme, sidebar, children }) => {
             <ResponsiveContext.Consumer>
                 {size => (
                     <Box fill>
-
                         <AppBar onSidebarBtnClick={setShowSidebar} />
-
 
                         <Box direction='row' flex overflow={{ horizontal: 'hidden' }}>
 
-                            {(!showSidebar || size !== 'small') ? (
-                                <Collapsible direction="horizontal" open={showSidebar}>
-                                    <Box className='app-sidebar' direction="row" height={{ min: '100%' }}>
-                                        <AppSidebar>
-                                            {sidebar}
-                                        </AppSidebar>
-                                    </Box>
-                                </Collapsible>
-                            ) : (
-                                <Layer>
-                                    <Box
-                                        fill
-                                        background='light-2'
-                                        align='center'
-                                        justify='center'
-                                    >
+                            {(!showSidebar || size !== 'small') ?
+                                (
+                                    <AppSidebar showSidebar={showSidebar}>
                                         {sidebar}
-                                    </Box>
-                                    <Box
-                                        background='light-2'
-                                        tag='header'
-                                        justify='end'
-                                        align='center'
-                                        direction='row'
-                                    >
-                                        <Button
-                                            icon={<FormClose />}
-                                            onClick={() => setShowSidebar((sb) => !sb)}
-                                        />
-                                    </Box>
+                                    </AppSidebar>
+                                ) :
+                                (
+                                    <Layer>
+                                        <Box
+                                            fill
+                                            background='light-2'
+                                            align='center'
+                                            justify='center'
+                                        >
+                                            {children}
+                                        </Box>
+                                        <Box
+                                            background='light-2'
+                                            tag='header'
+                                            justify='end'
+                                            align='center'
+                                            direction='row'
+                                        >
+                                            <Button
+                                                icon={<FormClose />}
+                                                onClick={() => setShowSidebar(false)}
+                                            />
+                                        </Box>
 
-                                </Layer>
-                            )}
+                                    </Layer>
+                                )
+                            }
 
                             <Box flex className='app-content' pad="large">
-                                {React.Children.map(children, (child) => {
+                                {children}
+                                {/* {React.Children.map(children, (child) => {
                                     return React.cloneElement(child, { showSidebar });
-                                })}
+                                })} */}
                             </Box>
                         </Box>
                     </Box>
@@ -80,7 +78,5 @@ const MainLayout = ({ theme, sidebar, children }) => {
         </Grommet>
     );
 }
-
-
 
 export default MainLayout;
