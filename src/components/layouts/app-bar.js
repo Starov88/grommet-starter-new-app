@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Header, Heading } from 'grommet';
 import { BladesVertical } from 'grommet-icons';
 
-const AppBar = (props) => (
+const AppBar = ({ showSidebar, onSidebarBtnClick }) => (
     <Header
         direction='row'
         align='center'
@@ -16,7 +16,7 @@ const AppBar = (props) => (
     >
         <Button
             icon={<BladesVertical />}
-            onClick={() => props.onSidebarBtnClick((sb) => !sb)}
+            onClick={() => onSidebarBtnClick(!showSidebar)}
         />
         <Heading level='3' margin='none'>Sweets & Flowers</Heading>
     </Header>

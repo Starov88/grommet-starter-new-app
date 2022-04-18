@@ -36,6 +36,19 @@ const AppSidefilter = ({ onFilterConfirm }) => {
         }
     }
 
+    const onFlash = () => {
+        if (onFilterConfirm) {
+            onFilterConfirm({});
+        }
+        var newOptions = [...options];
+        newOptions.forEach((item) => {
+            item.options.forEach((opt) => {
+                opt.checked = false;
+            });
+        });
+        setOptions(newOptions);
+    }
+
     const onOptionSelected = ({ value, option }) => {
         var newData = [...options];
         var indxOpt = -1;
@@ -82,6 +95,7 @@ const AppSidefilter = ({ onFilterConfirm }) => {
         >
             {content}
             <Button primary alignSelf="start" label="Apply" onClick={onConfirm} />
+            <Button margin={{ top: "small" }} primary alignSelf="start" label="Flash" onClick={onFlash} />
         </Box>
     )
 }

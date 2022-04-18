@@ -22,7 +22,7 @@ const AppSidefilterItem = ({ data, onChange }) => {
                 weight="bold"
                 size="medium"
                 color="brand"
-                alignSelf="center"
+                alignSelf="start"
                 margin={{ bottom: "small" }}
             >
                 {data.name}

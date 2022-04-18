@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { sidebarActions } from '../../store';
 import {
     Box,
     Button,
@@ -13,22 +16,20 @@ import AppSidebar from './app-sidebar';
 
 import './layout.css';
 
-const MainLayout = ({ theme, sidebar, children }) => {
-
-    var [showSidebar, setShowSidebar] = useState(true);
+const MainLayout = ({ theme, sidebar, children, showSidebar, sidebarBtnClick }) => {
 
     return (
         <Grommet theme={theme} full>
             <ResponsiveContext.Consumer>
                 {size => (
                     <Box fill>
-                        <AppBar onSidebarBtnClick={setShowSidebar} />
+                        <AppBar onSidebarBtnClick={sidebarBtnClick} showSidebar={showSidebar} />
 
                         <Box direction='row' flex overflow={{ horizontal: 'hidden' }}>
 
                             {(!showSidebar || size !== 'small') ?
                                 (
-                                    <AppSidebar showSidebar={showSidebar}>
+                                    <AppSidebar>
                                         {sidebar}
                                     </AppSidebar>
                                 ) :
@@ -40,7 +41,7 @@ const MainLayout = ({ theme, sidebar, children }) => {
                                             align='center'
                                             justify='center'
                                         >
-                                            {children}
+                                            {sidebar}
                                         </Box>
                                         <Box
                                             background='light-2'
@@ -51,7 +52,7 @@ const MainLayout = ({ theme, sidebar, children }) => {
                                         >
                                             <Button
                                                 icon={<FormClose />}
-                                                onClick={() => setShowSidebar(false)}
+                                                onClick={() => sidebarBtnClick(false)}
                                             />
                                         </Box>
 
@@ -73,4 +74,17 @@ const MainLayout = ({ theme, sidebar, children }) => {
     );
 }
 
-export default MainLayout;
+const mapStateToProps = (state) => {
+    return {
+        showSidebar: state.showSidebar
+    };
+}
+
+const mapDispatchToProps = (dispatch) => {
+    const { sidebarBtnClick } = bindActionCreators(sidebarActions, dispatch);
+    return {
+        sidebarBtnClick
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainLayout);

@@ -54,6 +54,7 @@
 // );
 
 import React from 'react';
+import { connect } from 'react-redux';
 import { Collapsible, Sidebar, Box } from 'grommet';
 
 const AppSidebar = ({ showSidebar, children }) => (
@@ -71,8 +72,12 @@ const AppSidebar = ({ showSidebar, children }) => (
             </Sidebar>
         </Box>
     </Collapsible>
-
 );
 
+const mapStateToProps = (state) => {
+    return {
+        showSidebar: state.showSidebar
+    };
+}
 
-export default AppSidebar;
+export default connect(mapStateToProps)(AppSidebar);
