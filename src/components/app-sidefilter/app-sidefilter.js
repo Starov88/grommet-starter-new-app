@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Box, Button, Heading } from "grommet";
+import { Box, Button } from "grommet";
 
 import { filterService } from "../../services";
 import { useGetAllData } from "../../hoc";
-
 import AppSidefilterItem from './app-sidefilter-item';
-
 
 import './app-sidefilter.css';
 

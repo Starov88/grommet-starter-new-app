@@ -1,19 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
     Box,
     Button,
-    Collapsible,
-    Heading,
     Grommet,
     Layer,
-    ResponsiveContext,
-    Sidebar,
-    SidebarHeader,
-    SidebarFooter
+    ResponsiveContext
 } from 'grommet';
-import { FormClose, BladesVertical } from 'grommet-icons';
+import { FormClose } from 'grommet-icons';
 
-import Test from '../test/test';
 import AppBar from './app-bar';
 import AppSidebar from './app-sidebar';
 
