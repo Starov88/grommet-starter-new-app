@@ -54,15 +54,22 @@
 // );
 
 import React from 'react';
-import { connect } from 'react-redux';
+
 import { Collapsible, Sidebar, Box } from 'grommet';
+
+import './app-sidebar.css'
 
 const AppSidebar = ({ showSidebar, children }) => (
     <Collapsible direction="horizontal" open={showSidebar}>
-        <Box direction="row" height={{ min: '100%' }}>
+        <Box className='app-sidebar'
+            direction="row"
+            height={{ min: '100%' }}
+            width={{ min: '200px' }}
+        >
             <Sidebar
                 responsive
                 background="light-2"
+                width={{ min: '100%' }}
                 header={null} //{<SidebarHeader />}
                 footer={null} //{<SidebarFooter />}
                 pad={{ left: 'medium', right: 'large', vertical: 'medium' }}
@@ -74,10 +81,7 @@ const AppSidebar = ({ showSidebar, children }) => (
     </Collapsible>
 );
 
-const mapStateToProps = (state) => {
-    return {
-        showSidebar: state.showSidebar
-    };
-}
+export default AppSidebar;
 
-export default connect(mapStateToProps)(AppSidebar);
+
+

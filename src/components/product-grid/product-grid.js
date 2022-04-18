@@ -4,7 +4,7 @@ import { Grid } from 'grommet';
 import { useGetAllData } from '../../hoc';
 import { cakeService } from '../../services';
 
-import ProductItem from "../product-item";
+import ProductItem from "./product-item";
 
 import './product-grid.css';
 
