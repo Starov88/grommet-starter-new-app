@@ -1,3 +1,11 @@
+import { connect } from 'react-redux';
+
 import ProductGrid from "./product-grid";
 
-export default ProductGrid;
+const mapStateToProps = (state) => {
+    return {
+        filter: state.productFilter
+    };
+}
+
+export default connect(mapStateToProps)(ProductGrid);

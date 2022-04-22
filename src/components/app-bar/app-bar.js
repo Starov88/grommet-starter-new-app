@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Header, Heading } from 'grommet';
-import { BladesVertical } from 'grommet-icons';
+import { Menu } from 'grommet-icons';
 
 const AppBar = ({ showSidebar, onSidebarBtnClick }) => (
     <Header
@@ -15,7 +15,7 @@ const AppBar = ({ showSidebar, onSidebarBtnClick }) => (
         style={{ zIndex: '1' }}
     >
         <Button
-            icon={<BladesVertical />}
+            icon={<Menu />}
             onClick={() => onSidebarBtnClick(!showSidebar)}
         />
         <Heading level='3' margin='none'>Sweets & Flowers</Heading>

@@ -1,8 +1,12 @@
 import React from "react";
 
-import { Stack, Image, Card, CardBody, Box, Heading, CardHeader, Text } from 'grommet';
+import { Stack, Image, Card, CardBody, Box, Heading, CardHeader, Text, Anchor } from 'grommet';
+import { Notes } from 'grommet-icons';
+import { Link } from "react-router-dom";
 
-import prouctImage from './Untitled.png';
+import { AppLink } from "../../app-links";
+
+//import prouctImage from './Untitled.png';
 import './product-item.css';
 
 const ProductItem = ({ product }) => {
@@ -21,7 +25,7 @@ const ProductItem = ({ product }) => {
                 <CardBody height="medium">
                     <Image
                         fit="cover"
-                        src={prouctImage}
+                        src={`./img/${product.mainImage}`}
                         a11yTitle="scuba diving"
                     />
                 </CardBody>
@@ -33,7 +37,7 @@ const ProductItem = ({ product }) => {
                     width="medium"
                     justify="start"
                 >
-                    <Box alignSelf="start">
+                    <Box alignSelf="start" width="medium">
                         <Heading level="3" alignSelf="start" margin={{ top: "xsmall", bottom: "medium" }}>
                             {product.title}
                         </Heading>
@@ -41,7 +45,21 @@ const ProductItem = ({ product }) => {
                         <Text size="medium">{`Тип: ${product.type}`}</Text>
                         <Text size="medium">{`Cостав: ${product.composition}`}</Text>
                         <Text size="medium">{`Диаметр: ${product.diameter}`}</Text>
+                        {/* <Box align="end">
+                            <Anchor
+                                icon={}
+                                label="Details"
+                                size="medium"
+                            >
+                                <Link to={`${product.id}`} style={{ textDecoration: "none" }} />
+                            </Anchor>
+
+                        </Box> */}
+                        <AppLink to={`${product.id}`} icon={<Notes />}>Details</AppLink>
+                        <AppLink to="/products"><Notes />Details</AppLink>
+
                     </Box>
+
                 </CardHeader>
             </Stack>
         </Card>

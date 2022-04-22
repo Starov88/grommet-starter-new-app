@@ -1,0 +1,5 @@
+.app-link > a, .app-link:hover > a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}

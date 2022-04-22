@@ -1,34 +1,23 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { sidebarActions } from '../../store';
-import { Box } from 'grommet';
+import { Box, Footer, Text, Anchor } from 'grommet';
 
 import AppBar from '../app-bar';
 
 import './main-layout.css';
 
 
-const MainLayout = ({ children, showSidebar, sidebarBtnClick }) => {
+const MainLayout = ({ children }) => {
     return (
-        <Box fill>
-            <AppBar onSidebarBtnClick={sidebarBtnClick} showSidebar={showSidebar} />
+        <Box flex height={{ min: "100%" }}>
+            <AppBar />
             {children}
+            <Footer background="brand" pad="medium">
+                <Text>Copyright</Text>
+                <Anchor label="About" />
+            </Footer>
         </Box>
     );
 }
 
-const mapStateToProps = (state) => {
-    return {
-        showSidebar: state.showSidebar
-    };
-}
 
-const mapDispatchToProps = (dispatch) => {
-    const { sidebarBtnClick } = bindActionCreators(sidebarActions, dispatch);
-    return {
-        sidebarBtnClick
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(MainLayout);
+export default MainLayout;

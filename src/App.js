@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Grommet } from 'grommet';
 
-import ProductsPage from './pages/products-page';
 import MainLayout from './components/layouts/main-layout';
+import { ProductsPage, SingleProductPage } from './pages';
 
 const theme = {
   global: {
@@ -28,6 +28,8 @@ const theme = {
 const routes = (
   <Routes>
     <Route path='/' element={<MainLayout><ProductsPage /></MainLayout>} />
+    <Route path='/products/' element={<MainLayout><ProductsPage /></MainLayout>} />
+    <Route path='/products/:id' element={<MainLayout><SingleProductPage /></MainLayout>} />
     <Route path='profile/' element={<div>profile</div>} />
     <Route path='cart/' element={<div>cart</div>} />
   </Routes>

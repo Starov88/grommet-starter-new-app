@@ -55,31 +55,68 @@
 
 import React from 'react';
 
-import { Collapsible, Sidebar, Box } from 'grommet';
+import { Collapsible, Sidebar, Box, Button, Layer } from 'grommet';
+import { FormClose } from 'grommet-icons';
 
 import './app-sidebar.css'
 
-const AppSidebar = ({ showSidebar, children }) => (
-    <Collapsible direction="horizontal" open={showSidebar}>
-        <Box className='app-sidebar'
-            direction="row"
-            height={{ min: '100%' }}
-            width={{ min: '200px' }}
-        >
-            <Sidebar
-                responsive
-                background="light-2"
-                width={{ min: '100%' }}
-                header={null} //{<SidebarHeader />}
-                footer={null} //{<SidebarFooter />}
-                pad={{ left: 'medium', right: 'large', vertical: 'medium' }}
-            >
-                {children}
-                {/* <MainNavigation /> */}
-            </Sidebar>
-        </Box>
-    </Collapsible>
-);
+const AppSidebar = ({ sidebarBtnClick, showSidebar, size, children }) => {
+
+    var content = null;
+    if (!showSidebar || size !== 'small') {
+        content = (
+            <Collapsible direction="horizontal" open={showSidebar}>
+                <Box className='app-sidebar'
+                    direction="column"
+                    height={{ min: '100%' }}
+                    width={{ min: '250px' }}
+                    background="light-2"
+                >
+                    <Sidebar
+                        responsive
+
+                        width={{ min: '100%' }}
+                        header={null} //{<SidebarHeader />}
+                        footer={null} //{<SidebarFooter />}
+                        pad={{ left: 'medium', right: 'large', vertical: 'medium' }}
+                    >
+                        {children}
+                        {/* <MainNavigation /> */}
+                    </Sidebar>
+                </Box>
+            </Collapsible>
+        )
+    }
+    else {
+        content = (
+            <Layer>
+                <Box
+                    fill
+                    background='light-2'
+                    align='center'
+                    justify='center'
+                >
+                    {children}
+                </Box>
+                <Box
+                    background='light-2'
+                    tag='header'
+                    justify='end'
+                    align='center'
+                    direction='row'
+                >
+                    <Button
+                        icon={<FormClose />}
+                        onClick={() => sidebarBtnClick(false)}
+                    />
+                </Box>
+
+            </Layer>
+        )
+    }
+
+    return content;
+}
 
 export default AppSidebar;
 
