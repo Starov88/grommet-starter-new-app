@@ -5,11 +5,18 @@ import './app-content.css';
 import AppSidebar from '../app-sidebar';
 
 const AppContent = ({ sidebar, children }) => {
-    return (
-        <Box direction='row' flex overflow={{ horizontal: 'hidden' }}>
+    let appSidebar = null;
+    if (sidebar) {
+        appSidebar = (
             <AppSidebar>
                 {sidebar}
             </AppSidebar>
+        )
+    }
+
+    return (
+        <Box direction='row' flex>
+            {appSidebar}
             <Box flex className='app-content' pad="large">
                 {children}
             </Box>

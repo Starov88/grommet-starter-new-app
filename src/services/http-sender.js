@@ -4,7 +4,7 @@ export default class HttpSender {
 
     _regExForId = /\/([0-9]*)\/$/;
 
-    _baseApiUrl = '';
+    _baseApiUrl = null;
 
     _options = {
         headers: {
@@ -57,6 +57,8 @@ export default class HttpSender {
     }
 
     _getUrl(query) {
-        return `${this._baseApiUrl}${query}`
+        if (this._baseApiUrl)
+            return `${this._baseApiUrl}${query}`;
+        return query;
     }
 }

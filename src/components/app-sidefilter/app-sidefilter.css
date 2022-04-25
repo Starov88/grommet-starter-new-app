@@ -1,13 +1,3 @@
-.app-sidefilter-cb > div{
-    height: 7px;
-}
-
-.app-sidefilter-cb > label > div {
-    width: 18px;
-    height: 18px;
-    margin-right: 9px;
-}
-
-.app-sidefilter-cb > label > span {
-    font-size: 14px;
+.app-sidefilter-cb .bpkHBA {
+    box-shadow: none;
 }

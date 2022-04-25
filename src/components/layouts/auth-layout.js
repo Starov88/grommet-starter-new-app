@@ -3,10 +3,10 @@ import { Box, Footer, Text, Anchor, Main, PageContent } from 'grommet';
 
 import AppBar from '../app-bar';
 
-import './main-layout.css';
+import './auth-layout.css';
 
 
-const MainLayout = ({ children }) => {
+const AuthLayout = ({ children }) => {
     return (
         <Box flex
             height={{ min: "100vh" }}
@@ -27,4 +27,4 @@ const MainLayout = ({ children }) => {
 }
 
 
-export default MainLayout;
+export default AuthLayout;

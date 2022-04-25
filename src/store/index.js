@@ -8,5 +8,6 @@ export const sidebarActions = {
 };
 
 export const productPageActions = {
-    applyFilterBtnClick: applyFilterBtnClickAction
+    applyFilterBtnClick: applyFilterBtnClickAction,
+    sidebarBtnClick: sidebarBtnClickAction
 }

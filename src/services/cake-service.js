@@ -4,11 +4,15 @@ export default class CakeService extends HttpSender {
 
     constructor() {
         super();
-        this.apiRoute = './test-data.json';
+        this.apiRoute = '../test-data.json';
     }
 
     async get(id) {
-        return this._getCakeModel(await this._get(`${this.apiRoute}${id}`));
+        const all = await this.getAll();
+        console.log(all);
+        const result = this._getCakeModel(all.find((x) => { return x.id === +id }));
+        console.log(result);
+        return result;
     }
 
     async getAll(filterObj) {

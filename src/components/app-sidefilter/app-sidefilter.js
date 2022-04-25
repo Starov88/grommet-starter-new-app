@@ -7,7 +7,7 @@ import AppSidefilterItem from './app-sidefilter-item';
 
 import './app-sidefilter.css';
 
-const AppSidefilter = ({ onFilterConfirm }) => {
+const AppSidefilter = ({ onFilterConfirm, sidebarBtnClick, size }) => {
 
     const [options, setOptions] = useState([]);
 
@@ -34,6 +34,7 @@ const AppSidefilter = ({ onFilterConfirm }) => {
 
             onFilterConfirm(result);
         }
+        closeSidebar();
     }
 
     const onFlash = () => {
@@ -47,6 +48,13 @@ const AppSidefilter = ({ onFilterConfirm }) => {
             });
         });
         setOptions(newOptions);
+        closeSidebar();
+    }
+
+    const closeSidebar = () => {
+        if (size === 'small') {
+            sidebarBtnClick(false);
+        }
     }
 
     const onOptionSelected = ({ value, option }) => {
@@ -65,25 +73,31 @@ const AppSidefilter = ({ onFilterConfirm }) => {
         setOptions(newData);
     }
 
-
+    let content = null;
     if ((loading && !error) || !options) {
-        return (
+        content = (
             <p>loading...</p>
         );
     }
-
-    if (error) {
-        return (
+    else if (error) {
+        content = (
             <p>{error}</p>
         );
     }
-
-
-    const content = options.map((item) => {
-        return (
-            <AppSidefilterItem key={`${item.name}`} data={item} onChange={onOptionSelected} />
-        )
-    });
+    else if (!loading && !error && options) {
+        let items = options.map((item) => {
+            return (
+                <AppSidefilterItem key={`${item.name}`} data={item} onChange={onOptionSelected} />
+            )
+        });
+        content = (
+            <React.Fragment>
+                {items}
+                <Button primary alignSelf="start" label="Apply" onClick={onConfirm} />
+                <Button margin={{ top: "small" }} primary alignSelf="start" label="Flash" onClick={onFlash} />
+            </React.Fragment>
+        );
+    }
 
     return (
         <Box
@@ -92,10 +106,9 @@ const AppSidefilter = ({ onFilterConfirm }) => {
             align="start"
             alignContent="start"
             pad="small"
+            height={{ min: "100%" }}
         >
             {content}
-            <Button primary alignSelf="start" label="Apply" onClick={onConfirm} />
-            <Button margin={{ top: "small" }} primary alignSelf="start" label="Flash" onClick={onFlash} />
         </Box>
     )
 }

@@ -7,7 +7,7 @@ import AppSidefilter from '../components/app-sidefilter';
 const ProductsPage = ({ applyFilterBtnClick }) => {
 
     return (
-        <AppContent sidebar={<AppSidefilter onFilterConfirm={(data) => { applyFilterBtnClick(data) }} />}>
+        <AppContent sidebar={<AppSidefilter />}>
             <ProductGrid />
         </AppContent>
     )

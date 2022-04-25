@@ -70,11 +70,10 @@ const AppSidebar = ({ sidebarBtnClick, showSidebar, size, children }) => {
                     direction="column"
                     height={{ min: '100%' }}
                     width={{ min: '250px' }}
-                    background="light-2"
+                    background="brand-1"
                 >
                     <Sidebar
                         responsive
-
                         width={{ min: '100%' }}
                         header={null} //{<SidebarHeader />}
                         footer={null} //{<SidebarFooter />}
@@ -91,15 +90,7 @@ const AppSidebar = ({ sidebarBtnClick, showSidebar, size, children }) => {
         content = (
             <Layer>
                 <Box
-                    fill
-                    background='light-2'
-                    align='center'
-                    justify='center'
-                >
-                    {children}
-                </Box>
-                <Box
-                    background='light-2'
+                    background='brand-1'
                     tag='header'
                     justify='end'
                     align='center'
@@ -110,7 +101,14 @@ const AppSidebar = ({ sidebarBtnClick, showSidebar, size, children }) => {
                         onClick={() => sidebarBtnClick(false)}
                     />
                 </Box>
-
+                <Box
+                    fill
+                    background='brand-1'
+                    align='center'
+                    justify='center'
+                >
+                    {children}
+                </Box>
             </Layer>
         )
     }
