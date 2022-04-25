@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Grommet } from 'grommet';
 
 import MainLayout from './components/layouts/main-layout';
-import { ProductsPage, SingleProductPage } from './pages';
+import { LoginPage, ProductsPage, SingleProductPage } from './pages';
 
 const theme = {
   global: {
@@ -11,19 +11,117 @@ const theme = {
       brand: '#47290F',
       "brand-1": '#CC9955',
       border: "brand",
-      text: "light-1"
+      text: "brand",
+      control: { dark: "brand", light: "brand" }
     },
     font: {
       family: 'Caveat',
-      size: '20px',
-      height: '22px',
+      size: '22px',
+      height: '24px',
     },
     hover: {
       background: {
-        color: { dark: "brand-1", light: "brand-1" },
-        opacity: .2
+        color: { dark: "light-4", light: "light-4" },
+        opacity: .3
       },
-      color: "brand"
+      color: { dark: "brand-1", light: "brand-1" }
+    },
+    active: {
+      background: {
+        color: { dark: "light-4", light: "light-4" },
+        opacity: .3
+      },
+      color: { dark: "brand-1", light: "brand-1" }
+    }
+  },
+  text: {
+    medium: {
+      size: '22px',
+      height: '24px'
+    }
+  },
+  button: {
+    hover: {
+      background: {
+        color: { dark: "brand", light: "brand" },
+        opacity: 1
+      },
+      border: {
+        color: { dark: "brand", light: "brand" }
+      },
+      color: { dark: "brand-1", light: "brand-1" }
+    },
+    active: {
+      background: {
+        color: "none",
+        opacity: 1
+      },
+      border: {
+        color: { dark: "brand", light: "brand" },
+        radius: "18px",
+        width: "2px"
+      },
+      color: { dark: "brand", light: "brand" },
+      font: {
+        weight: "bold"
+      },
+      padding: {
+        vertical: "4px",
+        horizontal: "50px"
+      },
+    },
+    default: {
+      background: {
+        color: "none",
+        opacity: 1
+      },
+      border: "none",
+      color: { dark: "light-1", light: "light-1" },
+      font: {
+        weight: "bold"
+      },
+      padding: {
+        vertical: "4px",
+        horizontal: "22px"
+      }
+    },
+    primary: {
+      background: {
+        color: "brand",
+        opacity: .9
+      },
+      border: {
+        color: { dark: "brand", light: "brand" },
+        radius: "18px",
+        width: "2px"
+      },
+      color: { dark: "brand-1", light: "brand-1" },
+      font: {
+        weight: "bold"
+      },
+      padding: {
+        vertical: "4px",
+        horizontal: "22px"
+      },
+    },
+    secondary: {
+      background: {
+        color: "none",
+        opacity: 1
+      },
+      border: {
+        color: { dark: "brand", light: "brand" },
+        radius: "18px",
+        width: "2px"
+      },
+      color: { dark: "brand", light: "brand" },
+      font: {
+        weight: "bold"
+      },
+      padding: {
+        vertical: "4px",
+        horizontal: "22px"
+      }
     }
   },
   checkBox: {
@@ -51,11 +149,18 @@ const theme = {
     size: "18px",
     toggle: {
       background: "brand",
-      color: "brand",
+      color: "light-1",
       extend: "",
       radius: "24px",
       size: "48px"
     }
+  },
+  menu: {
+    icons: {
+      color: "light-1"
+    },
+    background: "brand-1",
+    extend: ""
   }
 };
 
@@ -66,6 +171,9 @@ const routes = (
     <Route path='/products/:id' element={<MainLayout><SingleProductPage /></MainLayout>} />
     <Route path='profile/' element={<div>profile</div>} />
     <Route path='cart/' element={<div>cart</div>} />
+    <Route path='/auth/' element={<MainLayout><LoginPage /></MainLayout>} />
+    <Route path='/auth/login' element={<MainLayout><LoginPage /></MainLayout>} />
+    <Route path='/auth/registration' element={<div>registration</div>} />
   </Routes>
 );
 

@@ -93,8 +93,8 @@ const AppSidefilter = ({ onFilterConfirm, sidebarBtnClick, size }) => {
         content = (
             <React.Fragment>
                 {items}
-                <Button primary alignSelf="start" label="Apply" onClick={onConfirm} />
-                <Button margin={{ top: "small" }} primary alignSelf="start" label="Flash" onClick={onFlash} />
+                <Button primary label="Apply" onClick={onConfirm} />
+                <Button secondary label="Flash" onClick={onFlash} margin={{ top: "small" }} />
             </React.Fragment>
         );
     }

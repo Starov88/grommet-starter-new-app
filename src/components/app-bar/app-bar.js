@@ -2,15 +2,15 @@ import React from "react";
 import { Button, Header, Heading, Menu } from 'grommet';
 import { Menu as MenuIcon } from 'grommet-icons';
 
-const AppBar = ({ showSidebar, onSidebarBtnClick, loggedin }) => {
+const AppBar = ({ showSidebar, enableSidebar, onSidebarBtnClick, loggedin }) => {
 
     let menuItems = [
-        { label: 'Profile', onClick: () => { } },
-        { label: 'Sign Out', onClick: () => { } },
+        { label: 'Profile', color: 'light-1', onClick: () => { } },
+        { label: 'Sign Out', color: 'light-1', onClick: () => { } },
     ];
     if (!loggedin) {
         menuItems = [
-            { label: 'Sign In', onClick: () => { } }
+            { label: 'Sign In', color: 'light-1', onClick: () => { } }
         ];
     }
 
@@ -24,12 +24,17 @@ const AppBar = ({ showSidebar, onSidebarBtnClick, loggedin }) => {
             elevation='medium'
             style={{ zIndex: '1' }}
         >
-            <Button
-                icon={<MenuIcon />}
-                onClick={() => onSidebarBtnClick(!showSidebar)}
-            />
-            <Heading level='2' margin='none'>Sweets & Flowers</Heading>
+            {
+                enableSidebar ?
+                    (<Button
+                        icon={<MenuIcon />}
+                        onClick={() => onSidebarBtnClick(!showSidebar)}
+                    />) : null
+            }
+
+            <Heading level='2' alignSelf='center' color="brand-1" margin='none'>Sweets & Flowers</Heading>
             <Menu
+                color="light-1"
                 label="Menu"
                 items={menuItems}
             />

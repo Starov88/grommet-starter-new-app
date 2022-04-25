@@ -1,10 +1,11 @@
 import { reducer } from "./reducer";
-import { sidebarBtnClickAction, applyFilterBtnClickAction } from "./actions";
+import { sidebarBtnClickAction, applyFilterBtnClickAction, setSidebarStateAction } from "./actions";
 
 export { reducer };
 
 export const sidebarActions = {
-    sidebarBtnClick: sidebarBtnClickAction
+    sidebarBtnClick: sidebarBtnClickAction,
+    setSidebarState: setSidebarStateAction
 };
 
 export const productPageActions = {
