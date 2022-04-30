@@ -1,25 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { sidebarActions } from '../store';
-import { withResponsiveContext } from '../hoc';
+import { withResponsiveContext, useGetAllData } from '../hoc';
+import { filterService, cakeService } from "../services";
+
 
 import ProductGrid from '../components/product-grid';
 import AppContent from '../components/app-content';
 import AppSidefilter from '../components/app-sidefilter';
 
-const ProductsPage = ({ setSidebarState, size }) => {
+const ProductsPage = ({ filter, setSidebarState, size }) => {
 
-    setSidebarState({
-        show: size !== 'small' ? true : false,
-        enable: true
-    });
+    useEffect(() => {
+        console.log("useEffect ProductsPage")
+        setSidebarState({
+            show: size !== 'small' ? true : false,
+            enable: true
+        });
+    }, [size]);
+
+
+    const productsData = useGetAllData(cakeService, filter);
+    const filterData = useGetAllData(filterService);
 
     return (
-        <AppContent sidebar={<AppSidefilter />}>
-            <ProductGrid />
+        <AppContent sidebar={<AppSidefilter filterData={filterData} />}>
+            <ProductGrid productsData={productsData} />
         </AppContent>
     )
+}
+
+const mapStateToProps = (state) => {
+    return {
+        filter: state.productFilter
+    };
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -29,4 +44,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default withResponsiveContext(connect(null, mapDispatchToProps)(ProductsPage));
+export default withResponsiveContext(connect(mapStateToProps, mapDispatchToProps)(ProductsPage));

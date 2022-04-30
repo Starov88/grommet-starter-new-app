@@ -8,11 +8,6 @@ export const sidebarActions = {
     setSidebarState: setSidebarStateAction
 };
 
-export const productPageActions = {
-    applyFilterBtnClick: applyFilterBtnClickAction,
-    sidebarBtnClick: sidebarBtnClickAction
-}
-
 export const filterActions = {
     onFilterConfirm: applyFilterBtnClickAction
 }

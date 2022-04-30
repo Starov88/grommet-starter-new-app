@@ -1,16 +1,13 @@
 import React from "react";
 import { Grid } from 'grommet';
 
-import { useGetAllData } from '../../hoc';
-import { cakeService } from '../../services';
-
 import ProductItem from "./product-item";
 
 import './product-grid.css';
 
-const ProductGrid = ({ filter }) => {
+const ProductGrid = ({ productsData }) => {
 
-    const { data, loading, error } = useGetAllData(cakeService, filter);
+    const { data, loading, error } = productsData;
 
     if (loading && !error) {
         return (

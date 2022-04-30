@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button } from "grommet";
 
-import { filterService } from "../../services";
-import { useGetAllData } from "../../hoc";
 import AppSidefilterItem from './app-sidefilter-item';
 
 import './app-sidefilter.css';
 
-const AppSidefilter = ({ onFilterConfirm, size }) => {
+const AppSidefilter = ({ onFilterConfirm, size, filterData }) => {
 
     const [options, setOptions] = useState([]);
 
-    const { data, loading, error } = useGetAllData(filterService);
+    const { data, loading, error } = filterData;
 
     useEffect(() => {
-        console.log("useEffect - sidefilter")
+        console.log("useEffect AppSidefilter");
+        console.log(data);
+
         setOptions(data);
     }, [data]);
 
@@ -38,7 +38,7 @@ const AppSidefilter = ({ onFilterConfirm, size }) => {
 
     const onFlash = () => {
         if (onFilterConfirm) {
-            onFilterConfirm({ filter: {}, closeFilter: false });
+            onFilterConfirm({ filter: {}, closeFilter: size === 'small' });
         }
         var newOptions = [...options];
         newOptions.forEach((item) => {
