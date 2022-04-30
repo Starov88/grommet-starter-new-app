@@ -5,8 +5,8 @@ import AppBar from '../app-bar';
 
 import './main-layout.css';
 
-
 const MainLayout = ({ children }) => {
+
     return (
         <Box flex
             height={{ min: "100vh" }}
@@ -25,6 +25,5 @@ const MainLayout = ({ children }) => {
         </Box>
     );
 }
-
 
 export default MainLayout;

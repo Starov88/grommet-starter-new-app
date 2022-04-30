@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Header, Heading, Menu } from 'grommet';
+import { Button, Header, Image, Menu } from 'grommet';
 import { Menu as MenuIcon } from 'grommet-icons';
 
 const AppBar = ({ showSidebar, enableSidebar, onSidebarBtnClick, loggedin }) => {
@@ -32,9 +32,11 @@ const AppBar = ({ showSidebar, enableSidebar, onSidebarBtnClick, loggedin }) => 
                     />) : null
             }
 
-            <Heading level='2' alignSelf='center' color="brand-1" margin='none'>Sweets & Flowers</Heading>
+            {/* <Heading level='2' alignSelf='center' color="brand-1" margin='none'>Sweets & Flowers</Heading> */}
+            <Image height={"120px"} fit="contain" src="../images/logo/logo-web.png" />
             <Menu
                 color="light-1"
+                dropBackground="brand-1"
                 label="Menu"
                 items={menuItems}
             />

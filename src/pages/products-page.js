@@ -8,7 +8,7 @@ import ProductGrid from '../components/product-grid';
 import AppContent from '../components/app-content';
 import AppSidefilter from '../components/app-sidefilter';
 
-const ProductsPage = ({ applyFilterBtnClick, setSidebarState, size }) => {
+const ProductsPage = ({ setSidebarState, size }) => {
 
     setSidebarState({
         show: size !== 'small' ? true : false,

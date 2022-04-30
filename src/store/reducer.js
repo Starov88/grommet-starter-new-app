@@ -20,7 +20,11 @@ export const reducer = (state = initState, action = null) => {
             newState.showSidebar = action.payload;
             return newState;
         case 'APPLY_FILTER_BTN_CLICK':
-            newState.productFilter = action.payload;
+            newState.productFilter = action.payload.filter;
+
+            if (action.payload.closeFilter) {
+                newState.showSidebar = false;
+            }
             return newState;
         default: return state;
     }

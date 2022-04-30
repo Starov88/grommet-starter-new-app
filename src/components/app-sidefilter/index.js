@@ -1,15 +1,14 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { productPageActions } from '../../store';
+import { filterActions } from '../../store';
 import { withResponsiveContext } from '../../hoc';
 
 import AppSidefilter from "./app-sidefilter";
 
 const mapDispatchToProps = (dispatch) => {
-    const { applyFilterBtnClick, sidebarBtnClick } = bindActionCreators(productPageActions, dispatch);
+    const { onFilterConfirm } = bindActionCreators(filterActions, dispatch);
     return {
-        onFilterConfirm: applyFilterBtnClick,
-        sidebarBtnClick
+        onFilterConfirm
     }
 }
 

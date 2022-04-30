@@ -1,30 +1,15 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { sidebarActions } from '../store';
 
-import AppContent from '../components/app-content';
 import { AppLogin } from '../components/auth';
+import AuthLayout from '../components/layouts/auth-layout';
 
-const LoginPage = ({ setSidebarState }) => {
-
-    setSidebarState({
-        enable: false
-    });
+const LoginPage = () => {
 
     return (
-        <AppContent>
+        <AuthLayout>
             <AppLogin />
-        </AppContent>
+        </AuthLayout>
     )
 }
 
-
-const mapDispatchToProps = (dispatch) => {
-    const { setSidebarState } = bindActionCreators(sidebarActions, dispatch);
-    return {
-        setSidebarState
-    }
-}
-
-export default connect(null, mapDispatchToProps)(LoginPage);
+export default LoginPage;

@@ -1,28 +1,35 @@
 import React from 'react';
-import { Box, Footer, Text, Anchor, Main, PageContent } from 'grommet';
+import { Box, Grid, Image } from 'grommet';
 
-import AppBar from '../app-bar';
 
 import './auth-layout.css';
 
-
 const AuthLayout = ({ children }) => {
     return (
-        <Box flex
-            height={{ min: "100vh" }}
-            background="light-1"
+        <Grid flex height="100vh"
+            areas={
+                [
+                    { name: 'brand-image', start: [0, 0], end: [1, 0] },
+                    { name: 'form-area', start: [1, 0], end: [2, 0] }
+                ]
+            }
+            columns={['flex', 'flex']}
+            rows={['flex']}
         >
-            <AppBar />
-            <Main>
-                <PageContent height={{ min: "100vh" }}>
-                    {children}
-                </PageContent>
-            </Main>
-            <Footer background="brand" pad="medium">
-                <Text>Copyright</Text>
-                <Anchor label="About" />
-            </Footer>
-        </Box>
+            <Box gridArea="brand-image" background="brand" align="center"
+            >
+                <Image
+                    width="50%"
+                    fit="contain"
+                    src={`../images/logo/logo-web.png`}
+                    a11yTitle="scuba diving"
+                />
+
+            </Box>
+            <Box gridArea="form-area" pad="large">
+                {children}
+            </Box>
+        </Grid>
     );
 }
 

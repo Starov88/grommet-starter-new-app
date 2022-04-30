@@ -7,7 +7,7 @@ import AppSidefilterItem from './app-sidefilter-item';
 
 import './app-sidefilter.css';
 
-const AppSidefilter = ({ onFilterConfirm, sidebarBtnClick, size }) => {
+const AppSidefilter = ({ onFilterConfirm, size }) => {
 
     const [options, setOptions] = useState([]);
 
@@ -32,14 +32,13 @@ const AppSidefilter = ({ onFilterConfirm, sidebarBtnClick, size }) => {
                 }
             }));
 
-            onFilterConfirm(result);
+            onFilterConfirm({ filter: result, closeFilter: size === 'small' });
         }
-        closeSidebar();
     }
 
     const onFlash = () => {
         if (onFilterConfirm) {
-            onFilterConfirm({});
+            onFilterConfirm({ filter: {}, closeFilter: false });
         }
         var newOptions = [...options];
         newOptions.forEach((item) => {
@@ -48,13 +47,6 @@ const AppSidefilter = ({ onFilterConfirm, sidebarBtnClick, size }) => {
             });
         });
         setOptions(newOptions);
-        closeSidebar();
-    }
-
-    const closeSidebar = () => {
-        if (size === 'small') {
-            sidebarBtnClick(false);
-        }
     }
 
     const onOptionSelected = ({ value, option }) => {

@@ -2,9 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Stack, Image, Card, CardBody, Box, Heading, CardHeader, Text } from 'grommet';
-import { Notes } from 'grommet-icons';
-
-import { AppLink } from "../../app-links";
 
 //import prouctImage from './Untitled.png';
 import './product-item.css';
@@ -41,7 +38,7 @@ const ProductItem = ({ product, history }) => {
                     width="medium"
                     justify="start"
                 >
-                    <Box alignSelf="start" width="medium" o>
+                    <Box alignSelf="start" width="medium">
                         <Heading level="3" alignSelf="start" margin={{ top: "xsmall", bottom: "medium" }} color="brand">
                             {product.name}
                         </Heading>
