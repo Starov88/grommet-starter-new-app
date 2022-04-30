@@ -5,9 +5,7 @@ import ProductItem from "./product-item";
 
 import './product-grid.css';
 
-const ProductGrid = ({ productsData }) => {
-
-    const { data, loading, error } = productsData;
+const ProductGrid = ({ data, loading, error }) => {
 
     if (loading && !error) {
         return (

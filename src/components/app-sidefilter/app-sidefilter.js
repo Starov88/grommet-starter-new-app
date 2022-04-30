@@ -5,16 +5,11 @@ import AppSidefilterItem from './app-sidefilter-item';
 
 import './app-sidefilter.css';
 
-const AppSidefilter = ({ onFilterConfirm, size, filterData }) => {
+const AppSidefilter = ({ data, loading, error, onFilterConfirm, size }) => {
 
     const [options, setOptions] = useState([]);
 
-    const { data, loading, error } = filterData;
-
     useEffect(() => {
-        console.log("useEffect AppSidefilter");
-        console.log(data);
-
         setOptions(data);
     }, [data]);
 

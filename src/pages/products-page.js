@@ -13,7 +13,6 @@ import AppSidefilter from '../components/app-sidefilter';
 const ProductsPage = ({ filter, setSidebarState, size }) => {
 
     useEffect(() => {
-        console.log("useEffect ProductsPage")
         setSidebarState({
             show: size !== 'small' ? true : false,
             enable: true
@@ -25,8 +24,8 @@ const ProductsPage = ({ filter, setSidebarState, size }) => {
     const filterData = useGetAllData(filterService);
 
     return (
-        <AppContent sidebar={<AppSidefilter filterData={filterData} />}>
-            <ProductGrid productsData={productsData} />
+        <AppContent sidebar={<AppSidefilter {...filterData} />}>
+            <ProductGrid {...productsData} />
         </AppContent>
     )
 }

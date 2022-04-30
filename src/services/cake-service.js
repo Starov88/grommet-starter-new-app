@@ -17,7 +17,6 @@ export default class CakeService extends HttpSender {
 
     async getAll(filterObj) {
         var result = await this._get(this.apiRoute);
-        console.log("cake - getAll");
         return this._filterData(result, filterObj).map(this._getCakeModel);
     }
 
@@ -31,7 +30,7 @@ export default class CakeService extends HttpSender {
 
         const filterKeys = Object.keys(filterObj);
         if (filterKeys.length === 0) return data;
-        console.log("cake - _filterData");
+
         return data.filter((item) => {
             var res = true;
             filterKeys.forEach((key) => {
