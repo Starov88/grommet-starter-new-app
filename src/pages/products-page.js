@@ -10,7 +10,7 @@ import ProductGrid from '../components/product-grid';
 import AppContent from '../components/app-content';
 import AppSidefilter from '../components/app-sidefilter';
 
-const ProductsPage = ({ filter, setSidebarState, size }) => {
+const ProductsPage = ({ filter, setSidebarState, size, userInfo }) => {
 
     useEffect(() => {
         setSidebarState({
@@ -19,7 +19,7 @@ const ProductsPage = ({ filter, setSidebarState, size }) => {
         });
     }, [size]);
 
-
+    console.log(userInfo);
     const productsData = useGetAllData(cakeService, filter);
     const filterData = useGetAllData(filterService);
 
@@ -32,7 +32,8 @@ const ProductsPage = ({ filter, setSidebarState, size }) => {
 
 const mapStateToProps = (state) => {
     return {
-        filter: state.productFilter
+        filter: state.productFilter,
+        userInfo: state.userInfo
     };
 }
 

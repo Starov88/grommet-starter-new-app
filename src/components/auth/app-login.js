@@ -5,8 +5,8 @@ import "./auth.css";
 
 const AppLogin = ({ onSubmit, errors }) => {
 
-    //const initState = { email: "jo@ukr.net", password: "Jo123" };
-    const initState = { email: "", password: "" };
+    const initState = { email: "webapi.email@gmail.com", password: "1Password!" };
+    //const initState = { email: "", password: "" };
     const [value, setValue] = React.useState({ ...initState });
 
     return (

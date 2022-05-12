@@ -4,7 +4,7 @@ import { Grommet } from 'grommet';
 
 import MainLayout from './components/layouts/main-layout';
 import AuthLayout from './components/layouts/auth-layout';
-import { LoginPage, ProductsPage, SingleProductPage } from './pages';
+import { LoginPage, RegistrationPage, ProductsPage, SingleProductPage } from './pages';
 
 import theme from "./theme";
 
@@ -17,7 +17,7 @@ const routes = (
     <Route path='cart/' element={<div>cart</div>} />
     <Route path='/auth/' element={<AuthLayout><LoginPage /></AuthLayout>} />
     <Route path='/auth/login' element={<AuthLayout><LoginPage /></AuthLayout>} />
-    <Route path='/auth/registration' element={<div>registration</div>} />
+    <Route path='/auth/registration' element={<AuthLayout><RegistrationPage /></AuthLayout>} />
   </Routes>
 );
 

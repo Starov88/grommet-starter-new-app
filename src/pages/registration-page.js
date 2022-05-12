@@ -5,36 +5,79 @@ import { bindActionCreators } from 'redux';
 import { authActions } from '../store';
 import { authService } from "../services";
 
-import { AppRegistration } from '../components/auth';
+import { AppConfirmation, AppRegistration } from '../components/auth';
 
 const RegistrationPage = ({ userInfo, onRegistration }) => {
 
-    const initState = { email: "", password: "", confirmPassword: "" };
-    const [errors, setErrors] = React.useState({ ...initState });
+    const initErrorsState = { email: "", password: "", confirmPassword: "", firstName: "", lastName: "", confirmationCode: "" };
+    const [errors, setErrors] = React.useState({ ...initErrorsState });
+    const [confirmation, setConfirmation] = React.useState({ email: "", confirmationCode: "", isSended: false, isConfirmed: false });
 
     const navigate = useNavigate();
 
-    const onSubmitBtnClicked = (data) => {
-        authService.login(data.email, data.password).then((response) => {
+    const onSubmitBtnClicked = (value) => {
+        authService.registration(value)
+            .then((response) => {
 
-            console.log(response);
+                if (!response.success) {
+                    var newErrors = { ...initErrorsState };
+                    newErrors.global = "email not found or password is invalid";
+                    setErrors(newErrors);
+                    return;
+                }
+
+                onRegistration(response.data);
+                navigate("/products");
+
+            }).catch((err) => console.log(err));
+    }
+
+    var onSendConfirmCodeBtnClicked = (value) => {
+        authService.sendConfirmationCode(value.email).then((response) => {
 
             if (!response.success) {
-                var newErrors = { ...initState };
-                newErrors.global = "email not found or password is invalid";
+                var newErrors = { ...initErrorsState };
+                newErrors.email = response.message;
                 setErrors(newErrors);
                 return;
             }
 
-            onRegistration(response.data);
-            navigate("/products");
+            var newCofirmState = { ...confirmation };
+            newCofirmState.email = value.email;
+            newCofirmState.isSended = true;
+            setConfirmation(newCofirmState);
+            setErrors({ ...initErrorsState });
 
         }).catch((err) => console.log(err));
     }
 
-    return (
-        <AppRegistration onSubmit={onSubmitBtnClicked} errors={errors} />
-    )
+    var onEmailConfirmBtnClicked = (value) => {
+
+        authService.checkConfirmationCode(value.email, value.confirmationCode).then((response) => {
+            if (!response.success) {
+                var newErrors = { ...initErrorsState };
+                newErrors.confirmationCode = response.message;
+                setErrors(newErrors);
+                return;
+            }
+
+            var newCofirmState = { ...confirmation };
+            newCofirmState.confirmationCode = value.confirmationCode;
+            newCofirmState.isConfirmed = true;
+            setConfirmation(newCofirmState);
+
+        }).catch((err) => console.log(err));
+    }
+
+    return confirmation.isConfirmed ?
+        (
+            <AppRegistration onSubmit={onSubmitBtnClicked} errors={errors}
+                confirmationOn={true} email={confirmation.email} confirmationCode={confirmation.confirmationCode} />
+        ) :
+        (
+            <AppConfirmation onSubmit={confirmation.isSended ? onEmailConfirmBtnClicked : onSendConfirmCodeBtnClicked}
+                errors={errors} email={confirmation.email} />
+        )
 }
 
 const mapStateToProps = (state) => {

@@ -17,8 +17,6 @@ const LoginPage = ({ userInfo, onLogin }) => {
     const onSubmitBtnClicked = (data) => {
         authService.login(data.email, data.password).then((response) => {
 
-            console.log(response);
-
             if (!response.success) {
                 var newErrors = { ...initState };
                 newErrors.global = "email not found or password is invalid";
