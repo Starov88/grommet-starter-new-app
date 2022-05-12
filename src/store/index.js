@@ -1,5 +1,12 @@
 import { reducer } from "./reducer";
-import { sidebarBtnClickAction, applyFilterBtnClickAction, setSidebarStateAction } from "./actions";
+import {
+    sidebarBtnClickAction,
+    applyFilterBtnClickAction,
+    setSidebarStateAction,
+    loginAction,
+    logoutAction,
+    registrationAction
+} from "./actions";
 
 export { reducer };
 
@@ -10,4 +17,10 @@ export const sidebarActions = {
 
 export const filterActions = {
     onFilterConfirm: applyFilterBtnClickAction
+}
+
+export const authActions = {
+    onLogin: loginAction,
+    onRegistration: registrationAction,
+    onLogout: logoutAction
 }

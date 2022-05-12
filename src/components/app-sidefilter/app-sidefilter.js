@@ -80,8 +80,10 @@ const AppSidefilter = ({ data, loading, error, onFilterConfirm, size }) => {
         content = (
             <React.Fragment>
                 {items}
-                <Button primary label="Apply" onClick={onConfirm} />
-                <Button secondary label="Flash" onClick={onFlash} margin={{ top: "small" }} />
+                <Box direction="column" gap="small">
+                    <Button primary label="Apply" onClick={onConfirm} />
+                    <Button label="Flash" onClick={onFlash} />
+                </Box>
             </React.Fragment>
         );
     }

@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "firstName": "Yevhen",
+        "lastName": "Starov",
+        "email": "jo@ukr.net",
+        "password": "Jo123"
+    },
+    {
+        "id": 2,
+        "firstName": "Ivanna",
+        "lastName": "Starova",
+        "email": "iva@ukr.net",
+        "password": "Iva123"
+    }
+]

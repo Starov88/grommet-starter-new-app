@@ -5,11 +5,11 @@ import { bindActionCreators } from 'redux';
 import { authActions } from '../store';
 import { authService } from "../services";
 
-import { AppLogin } from '../components/auth';
+import { AppRegistration } from '../components/auth';
 
-const LoginPage = ({ userInfo, onLogin }) => {
+const RegistrationPage = ({ userInfo, onRegistration }) => {
 
-    const initState = { email: "", password: "" };
+    const initState = { email: "", password: "", confirmPassword: "" };
     const [errors, setErrors] = React.useState({ ...initState });
 
     const navigate = useNavigate();
@@ -26,14 +26,14 @@ const LoginPage = ({ userInfo, onLogin }) => {
                 return;
             }
 
-            onLogin(response.data);
+            onRegistration(response.data);
             navigate("/products");
 
         }).catch((err) => console.log(err));
     }
 
     return (
-        <AppLogin onSubmit={onSubmitBtnClicked} errors={errors} />
+        <AppRegistration onSubmit={onSubmitBtnClicked} errors={errors} />
     )
 }
 
@@ -44,10 +44,10 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    const { onLogin } = bindActionCreators(authActions, dispatch);
+    const { onRegistration } = bindActionCreators(authActions, dispatch);
     return {
-        onLogin
+        onRegistration
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+export default connect(mapStateToProps, mapDispatchToProps)(RegistrationPage);

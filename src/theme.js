@@ -5,6 +5,7 @@ const theme = {
             "brand-1": '#CC9955',
             border: "brand",
             text: "brand",
+            error: "red"
             // control: { dark: "brand", light: "brand" }
         },
         font: {
@@ -12,19 +13,24 @@ const theme = {
             size: '22px',
             height: '24px',
         },
-        hover: {
-            background: {
-                color: { dark: "light-4", light: "light-4" },
-                opacity: .3
-            },
-            color: { dark: "brand-1", light: "brand-1" }
-        },
+        // hover: {
+        //     background: {
+        //         color: { dark: "light-4", light: "light-4" },
+        //         opacity: .3
+        //     },
+        //     color: { dark: "brand-1", light: "brand-1" }
+        // },
         active: {
             background: {
                 color: { dark: "light-4", light: "light-4" },
                 opacity: .3
             },
             color: { dark: "brand-1", light: "brand-1" }
+        },
+        focus: {
+            border: {
+                color: "brand-1"
+            }
         }
     },
     text: {
@@ -34,16 +40,16 @@ const theme = {
         }
     },
     button: {
-        hover: {
-            background: {
-                color: { dark: "brand", light: "brand" },
-                opacity: .9
-            },
-            border: {
-                color: { dark: "brand", light: "brand" }
-            },
-            color: { dark: "brand-1", light: "brand-1" }
-        },
+        // hover: {
+        //     background: {
+        //         color: { dark: "brand", light: "brand" },
+        //         opacity: .9
+        //     },
+        //     border: {
+        //         color: { dark: "brand", light: "brand" }
+        //     },
+        //     color: { dark: "brand-1", light: "brand-1" }
+        // },
         active: {
             background: {
                 color: "none",

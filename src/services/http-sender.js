@@ -61,4 +61,19 @@ export default class HttpSender {
             return `${this._baseApiUrl}${query}`;
         return query;
     }
+
+    _getResponse(model) {
+        const response = {
+            data: model,
+            statusCode: "200",
+            success: true
+        };
+
+        if (!response.data) {
+            response.statusCode = "404";
+            response.success = false;
+        }
+
+        return response;
+    }
 }

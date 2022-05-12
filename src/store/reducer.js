@@ -1,7 +1,8 @@
 const initState = {
     enableSidebar: true,
     showSidebar: true,
-    productFilter: {}
+    productFilter: {},
+    userInfo: { loggedIn: false, user: null }
 }
 
 export const reducer = (state = initState, action = null) => {
@@ -25,6 +26,19 @@ export const reducer = (state = initState, action = null) => {
             if (action.payload.closeFilter) {
                 newState.showSidebar = false;
             }
+            return newState;
+        case 'LOGIN':
+            newState.userInfo.loggedIn = true;
+            newState.userInfo.user = action.payload;
+            return newState;
+        case 'REGISTRATION':
+            newState.userInfo.loggedIn = true;
+            newState.userInfo.user = action.payload;
+            return newState;
+        case 'LOGOUT':
+            newState.userInfo = { ...state.userInfo };
+            newState.userInfo.loggedIn = false;
+            newState.userInfo.user = {};
             return newState;
         default: return state;
     }
