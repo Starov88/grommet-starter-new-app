@@ -43,8 +43,8 @@ const ProductItem = ({ product, history }) => {
                             {product.name}
                         </Heading>
                         {/* <Text weight="bold" size="medium" color="brand">{<i>{`Title: ${product.title}`}</i>}</Text> */}
-                        <Text size="medium" color="brand">{`Тип: ${product.type}`}</Text>
-                        <Text size="medium" color="brand">{`Cостав: ${product.composition}`}</Text>
+                        <Text size="medium" color="brand">{`Тип: ${product.typeViewName}`}</Text>
+                        <Text size="medium" color="brand">{`Cостав: ${product.compositionViewName}`}</Text>
                         <Text size="medium" color="brand">{`Диаметр: ${product.diameter}`}</Text>
                         <Text size="medium" color="brand">{`Описание: ${product.description}`}</Text>
                         {/* <AppLink to={`${product.id}`} icon={<Notes />}>Details</AppLink> */}
