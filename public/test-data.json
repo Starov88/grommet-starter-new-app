@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "наполеон1",
-        "mainImage": "/products/img.png",
+        "mainImageUrl": "/products/img.png",
         "title": "торт",
         "description": "очень вкусный торт",
         "type": "muss",
@@ -16,7 +16,7 @@
     {
         "id": 2,
         "name": "наполеон2",
-        "mainImage": "/products/img.png",
+        "mainImageUrl": "/products/img.png",
         "title": "торт",
         "description": "очень вкусный торт",
         "type": "muss",
@@ -29,7 +29,7 @@
     {
         "id": 3,
         "name": "наполеон3",
-        "mainImage": "/products/img.png",
+        "mainImageUrl": "/products/img.png",
         "title": "торт",
         "description": "очень вкусный торт",
         "type": "cheese",
@@ -42,7 +42,7 @@
     {
         "id": 4,
         "name": "наполеон4",
-        "mainImage": "/products/img.png",
+        "mainImageUrl": "/products/img.png",
         "title": "торт",
         "description": "очень вкусный торт",
         "type": "cheese",
@@ -55,7 +55,7 @@
     {
         "id": 5,
         "name": "наполеон5",
-        "mainImage": "/products/img.png",
+        "mainImageUrl": "/products/img.png",
         "title": "торт",
         "description": "очень вкусный торт",
         "type": "muss",
@@ -69,7 +69,7 @@
     {
         "id": 6,
         "name": "наполеон6",
-        "mainImage": "/products/img.png",
+        "mainImageUrl": "/products/img.png",
         "title": "торт",
         "description": "очень вкусный торт",
         "type": "muss",
@@ -83,7 +83,7 @@
     {
         "id": 7,
         "name": "наполеон7",
-        "mainImage": "/products/img.png",
+        "mainImageUrl": "/products/img.png",
         "title": "торт",
         "description": "очень вкусный торт",
         "type": "cheese",
@@ -96,7 +96,7 @@
     {
         "id": 8,
         "name": "наполеон8",
-        "mainImage": "/products/img.png",
+        "mainImageUrl": "/products/img.png",
         "title": "торт",
         "description": "очень вкусный торт",
         "type": "cheese",
@@ -109,7 +109,7 @@
     {
         "id": 9,
         "name": "наполеон9",
-        "mainImage": "/products/img.png",
+        "mainImageUrl": "/products/img.png",
         "title": "торт",
         "description": "очень вкусный торт",
         "type": "muss",
@@ -123,7 +123,7 @@
     {
         "id": 10,
         "name": "наполеон10",
-        "mainImage": "/products/img.png",
+        "mainImageUrl": "/products/img.png",
         "title": "торт",
         "description": "очень вкусный торт",
         "type": "muss",
@@ -136,7 +136,7 @@
     {
         "id": 11,
         "name": "наполеон11",
-        "mainImage": "/products/img.png",
+        "mainImageUrl": "/products/img.png",
         "title": "торт",
         "description": "очень вкусный торт",
         "type": "bisquit",
@@ -151,7 +151,7 @@
     {
         "id": 12,
         "name": "наполеон12",
-        "mainImage": "/products/img.png",
+        "mainImageUrl": "/products/img.png",
         "title": "торт",
         "description": "очень вкусный торт",
         "type": "bisquit",
@@ -164,7 +164,7 @@
     {
         "id": 13,
         "name": "наполеон13",
-        "mainImage": "/products/img.png",
+        "mainImageUrl": "/products/img.png",
         "title": "торт",
         "description": "очень вкусный торт",
         "type": "cheese",
@@ -177,7 +177,7 @@
     {
         "id": 14,
         "name": "наполеон14",
-        "mainImage": "/products/img.png",
+        "mainImageUrl": "/products/img.png",
         "title": "торт",
         "description": "очень вкусный торт",
         "type": "cheese",
@@ -191,7 +191,7 @@
     {
         "id": 15,
         "name": "наполеон15",
-        "mainImage": "/products/img.png",
+        "mainImageUrl": "/products/img.png",
         "title": "торт",
         "description": "очень вкусный торт",
         "type": "bisquit",

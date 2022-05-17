@@ -19,7 +19,6 @@ const ProductsPage = ({ filter, setSidebarState, size, userInfo }) => {
         });
     }, [size]);
 
-    console.log(userInfo);
     const productsData = useGetAllData(cakeService, filter);
     const filterData = useGetAllData(filterService);
 

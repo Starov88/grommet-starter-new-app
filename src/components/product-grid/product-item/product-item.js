@@ -14,7 +14,7 @@ const ProductItem = ({ product, history }) => {
         <Card
             flex
             hoverIndicator
-            onClick={(evt) => { console.log(evt.currentTarget); navigate(`${product.id}`) }}
+            onClick={(evt) => { console.log(evt.currentTarget); navigate(`/products/${product.id}`) }}
             className="app-product-item"
             width="medium"
             justify="center"
@@ -26,7 +26,7 @@ const ProductItem = ({ product, history }) => {
                 <CardBody height="medium">
                     <Image
                         fit="cover"
-                        src={`../images/${product.mainImage}`}
+                        src={`../images/${product.mainImageUrl}`}
                         a11yTitle="scuba diving"
                     />
                 </CardBody>

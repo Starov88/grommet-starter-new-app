@@ -40,7 +40,7 @@ const ProductDetails = ({ id }) => {
             >
                 <Image
                     fit="contain"
-                    src={`../images/${data.mainImage}`}
+                    src={`../images/${data.mainImageUrl}`}
                     a11yTitle="scuba diving"
                 />
             </Box>

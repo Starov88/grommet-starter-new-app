@@ -26,7 +26,7 @@ const useRequest = (request) => {
                 !cancelled && setDataState({
                     data: null,
                     loading: false,
-                    error
+                    error: error.message
                 })
             });
 

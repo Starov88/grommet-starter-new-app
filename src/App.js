@@ -21,6 +21,9 @@ const routes = (
   </Routes>
 );
 
+var userLang = navigator.language || navigator.userLanguage;
+console.log(userLang);
+
 const App = () => {
   return (
     <Router>

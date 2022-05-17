@@ -4,7 +4,7 @@ export default class CakeService extends HttpSender {
 
     constructor() {
         super();
-        this.apiRoute = '../test-data.json';
+        this.apiRoute = 'https://localhost:5001/v1/product';
     }
 
     async get(id) {
@@ -16,8 +16,9 @@ export default class CakeService extends HttpSender {
     }
 
     async getAll(filterObj) {
-        var result = await this._get(this.apiRoute);
-        return this._filterData(result, filterObj).map(this._getCakeModel);
+        console.log(filterObj)
+        var result = await this._get(`${this.apiRoute}/list`);
+        return this._filterData(result.data, filterObj).map(this._getCakeModel);
     }
 
     _getCakeModel = (model) => {

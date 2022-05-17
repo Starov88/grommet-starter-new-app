@@ -9,8 +9,10 @@ export default class HttpSender {
     _options = {
         headers: {
             'Content-Type': 'application/json',
-            'Accept': 'application/json'
+            'Accept': 'application/json',
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwibmFtZSI6IndlYmFwaS5lbWFpbEBnbWFpbC5jb20iLCJlbWFpbCI6IndlYmFwaS5lbWFpbEBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiUm9vdCBBZG1pbiIsInJvbGUiOiJSb290IiwibmJmIjoxNjUyNzgwNDk0LCJleHAiOjE2NTI4MDkyOTQsImlhdCI6MTY1Mjc4MDQ5NH0.1UYXlVgzqKZLp2Y0bAb8-X4HJdfULREh0luw8KMznPA',
         },
+
         mode: 'cors'
     }
 
